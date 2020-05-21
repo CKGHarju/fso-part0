@@ -1,0 +1,8 @@
+note over browser:
+Browsers appends new note to DOM
+end note
+browser->server: POST /new_note_spa
+server-->browser: Response: 201 Created, Content-Type: application/json
+note over browser:
+Browser console logs json response if the status is 201
+end note

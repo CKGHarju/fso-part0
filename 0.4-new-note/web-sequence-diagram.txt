@@ -1,0 +1,22 @@
+browser->server: POST: /new_note
+server-->browser: Response: 302 Found, location: /notes
+note over browser:
+Browser reloads page due to 302 URL redirection to /notes
+end note
+browser->server: GET /notes
+server-->browser: Response: 200 OK, Content-Type: text/html
+note over browser:
+Browser renders the provided html in the Response
+end note
+browser->server: GET /main.css
+browser->server: HTTP GET /main.js
+server-->browser: Response: 200 OK, Content-Type: text/css
+server-->browser: Response: 200 OK, Content-Type: application/javascript
+note over browser:
+Browser applies styles from main.css and executes code in main.js
+end note
+browser->server: GET /data.json
+server-->browser: Response: 200 OK, Content-Type: application/javascript
+note over browser:
+Event handler is executed, that renders notes from data.json to display
+end note

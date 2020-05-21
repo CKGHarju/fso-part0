@@ -1,0 +1,18 @@
+browser->server: GET /spa
+server-->browser: Response: 200 OK, Content-Type: text/html
+note over browser:
+Browser renders the provided html in the Response
+end note
+browser->server: GET /main.css
+browser->server: GET /spa.js
+server-->browser: Response: 200 OK, Content-Type: text/css
+server-->browser: Response: 200 OK, Content-Type: application/javascript
+note over browser:
+Browser applies the styles from main.css and executes code in spa.js
+end note
+browser->server: GET /data.json
+server-->browser: Response: 200 OK, Content-Type: application/json
+note over browser:
+browser executes the event handler, that calls redrawNotes()
+which renders notes to display
+end note
