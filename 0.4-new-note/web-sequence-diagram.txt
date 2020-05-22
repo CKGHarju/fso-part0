@@ -16,7 +16,7 @@ note over browser:
 Browser applies styles from main.css and executes code in main.js
 end note
 browser->server: GET /data.json
-server-->browser: Response: 200 OK, Content-Type: application/javascript
+server-->browser: Response: 200 OK, Content-Type: application/json
 note over browser:
 Event handler is executed, that renders notes from data.json to display
 end note
